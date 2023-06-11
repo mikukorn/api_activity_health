@@ -34,7 +34,7 @@ class Activity(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     type = models.CharField(max_length=100, choices=TYPE_CHOICES)
     value = models.CharField(max_length=256)
-    event = models.ManyToManyField(Tag, through='TagActivity')
+    tags = models.ManyToManyField(Tag, through='TagActivity')
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
